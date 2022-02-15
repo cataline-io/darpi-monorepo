@@ -1,0 +1,24 @@
+body {
+  font-family: helvetica, arial;
+}
+
+fieldset {
+  border: none;
+  display: grid;
+  grid-gap: 0.5em;
+  width: 40%;
+  max-width: 400px;
+}
+
+label {
+  font-size: 1.3rem;
+}
+
+input {
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid #aaa;
+}

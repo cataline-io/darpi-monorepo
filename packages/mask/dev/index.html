@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>@cataline.io/mask</title>
+  </head>
+  <body>
+    <h1>@cataline.io/mask</h1>
+
+    <fieldset>
+      <label>birth date</label>
+      <input type="text" mask="99/99/9999" placeholder="99/99/9999" />
+
+      <label>phone</label>
+      <input type="text" mask="(99) 99999-9999" placeholder="(99) 99999-9999" />
+
+      <label>CPF</label>
+      <input type="text" mask="999.999.999-99" placeholder="999.999.999-99" />
+
+      <label>zip code</label>
+      <input type="text" mask="99999-999" placeholder="99999-999" />
+
+      <label>currency</label>
+      <input type="text" mask="9.999,99" placeholder="9.999,99" />
+
+      <label>car plate</label>
+      <input
+        type="text"
+        mask="****-9999"
+        placeholder="****-9999"
+        value="abc12345"
+      />
+    </fieldset>
+
+    <script src="./mask.bundle.js"></script>
+    <script>
+      const fields = document.querySelectorAll('input')
+
+      fields.forEach((field) => {
+        if (field.value) {
+          const maskPattern = field.getAttribute('mask')
+
+          field.value = mask.format(field.value, maskPattern)
+        }
+
+        field.addEventListener('input', (event) => {
+          event.target.value = mask.handler(event)
+        })
+      })
+    </script>
+  </body>
+</html>

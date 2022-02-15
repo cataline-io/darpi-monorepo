@@ -1,0 +1,55 @@
+@use './variables' as var;
+
+@mixin fieldBase {
+  border-radius: var.$borderRadius;
+  font-size: var.$fontSize;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid #ddd;
+  line-height: 40px;
+  padding: 0 15px;
+  margin: 0;
+  height: 40px;
+  color: var.$dark;
+  background: #fff;
+  width: 100%;
+  transition: border-color 0.3s;
+  &:focus {
+    border-color: var.$primary;
+  }
+  &::-webkit-input-placeholder,
+  &::placeholder {
+    color: #a2a3a7;
+  }
+  &[disabled] {
+    background-color: #f6f6f6;
+    cursor: no-drop;
+  }
+}
+
+@mixin angleArrow {
+  display: inline-block;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  text-indent: -9999px;
+  border-top: 1.5px solid var.$dark;
+  border-left: 1.5px solid var.$dark;
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+  color: transparent;
+  transform: translateY(-50%) rotate(-135deg);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  &:before {
+    display: block;
+    height: 200%;
+    width: 200%;
+    margin-left: -50%;
+    margin-top: -50%;
+    content: '';
+    transform: rotate(45deg);
+  }
+}

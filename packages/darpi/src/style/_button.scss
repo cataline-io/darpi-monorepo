@@ -1,0 +1,42 @@
+.button {
+  font-size: var.$fontSize;
+  font-weight: 500;
+  line-height: 1;
+  padding: 12px 20px;
+  outline: 0;
+  margin: 0;
+  border-radius: var.$borderRadius;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: max-content;
+  color: var.$dark;
+  cursor: pointer;
+  transition: all 0.3s;
+  &[disabled] {
+    cursor: no-drop;
+    opacity: 0.6;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &.primary {
+    background-color: var.$primary;
+    border-color: var.$primary;
+    color: #fff;
+  }
+  &.success {
+    background-color: var.$success;
+    border-color: var.$success;
+    color: #fff;
+  }
+  &.danger {
+    background-color: var.$danger;
+    border-color: var.$danger;
+    color: #fff;
+  }
+  &.warning {
+    background-color: var.$warning;
+    border-color: var.$warning;
+    color: #fff;
+  }
+}

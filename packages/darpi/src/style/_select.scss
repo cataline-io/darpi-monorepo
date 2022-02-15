@@ -1,0 +1,57 @@
+.select {
+  position: relative;
+  .selected {
+    @include mixin.fieldBase;
+  }
+  .darpi-arrow {
+    @include mixin.angleArrow;
+  }
+  .options {
+    position: absolute;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    background-color: #fff;
+    z-index: 999999;
+    padding: 5px 0;
+    margin-top: 5px;
+    border: 1px solid #eee;
+    border-radius: var.$borderRadius;
+    width: 100%;
+    display: none;
+    .item {
+      color: var.$dark;
+      cursor: pointer;
+      padding: 10px 15px;
+      &:hover {
+        background-color: #f6f6f6;
+      }
+      &.is-selected {
+        color: var.$primary;
+        background: rgba(var.$primary, 0.075);
+      }
+      &.is-disabled {
+        cursor: not-allowed;
+        color: rgba(var.$dark, 0.4);
+      }
+    }
+  }
+}
+
+.select.is-open {
+  .selected {
+    border-color: var.$primary;
+  }
+  .options {
+    display: block;
+  }
+  .darpi-arrow {
+    @include mixin.angleArrow;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+.select.is-disabled {
+  .selected {
+    background-color: #f6f6f6;
+    cursor: no-drop;
+  }
+}

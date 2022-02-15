@@ -1,0 +1,37 @@
+.file {
+  label {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    cursor: pointer ;
+    .browse {
+      background-color: #f6f6f6;
+      height: 38px;
+      border-left: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      border-top-left-radius: var.$borderRadius;
+      border-bottom-left-radius: var.$borderRadius;
+      transition: all 0.2s;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      padding: 0 10px;
+      color: var.$dark;
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+    .content {
+      @include mixin.fieldBase;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  input[type='file'] {
+    display: none;
+  }
+}
