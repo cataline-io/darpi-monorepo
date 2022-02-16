@@ -31,7 +31,8 @@
 
 <script lang="ts">
 import { defineComponent, inject } from 'vue'
-import { FormData, FieldProps } from '@/models'
+import FormData from '@/models/FormData'
+import FieldProps from '@/models/FieldProps'
 import { Schema } from '@cataline.io/schema'
 import valueTransformer from '@/utils/valueTransformer'
 

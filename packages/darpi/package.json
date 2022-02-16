@@ -1,26 +1,28 @@
 {
   "name": "@cataline.io/darpi",
   "version": "1.0.1",
-  "description": "",
+  "description": "Form validation library for Vue.js",
+  "author": "Cataline <contato@cataline.io>",
   "main": "dist/darpi.ssr.js",
   "browser": "dist/darpi.esm.js",
   "module": "dist/darpi.esm.js",
   "unpkg": "dist/darpi.min.js",
-  "types": "dist/types/src/lib.d.ts",
+  "types": "dist/types/darpi/index.d.ts",
   "files": [
     "dist/*"
   ],
   "sideEffects": false,
   "scripts": {
     "dev": "vue-cli-service serve dev/serve.ts",
+    "sass": "sass --no-source-map --style=compressed ./src/style/_index.scss ./dist/style.css",
+    "fixTypeDeclaration": "node build/fixTypeDeclaration.js",
     "prepublish": "lerna run build",
-    "prebuild": "rimraf ./dist",
+    "prebuild": "lerna run build --scope @cataline.io/schema --scope @cataline.io/mask && rimraf ./dist",
     "build": "cross-env NODE_ENV=production NODE_OPTIONS='--no-deprecation' rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "postbuild": "rimraf ./dist/types/dev ./dist/types/src/entry.d.ts && npm run sass",
-    "sass": "sass --no-source-map --style=compressed ./src/style/_index.scss ./dist/style.css"
+    "postbuild": "npm run fixTypeDeclaration && npm run sass"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -39,9 +41,11 @@
     "@vue/compiler-sfc": "^3.0.11",
     "@zerollup/ts-transform-paths": "^1.7.18",
     "cross-env": "^7.0.3",
+    "fs-extra": "^10.0.0",
     "minimist": "^1.2.5",
     "mitt": "^3.0.0",
     "postcss": "^8.2.10",
+    "replace-in-file": "^6.3.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.8",
     "rollup-plugin-postcss": "^4.0.0",
@@ -61,5 +65,14 @@
     "node": ">=12"
   },
   "gitHead": "df4345e4c1888f1dca1b39e019744097a8303024",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "nuxt",
+    "form",
+    "inputs",
+    "validation",
+    "validator",
+    "validate"
+  ]
 }

@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent, inject, PropType } from 'vue'
-import { FormData } from '@/models'
+import FormData from '@/models/FormData'
 import { validateButtonColor, Color } from '@/utils/validateButtonColor'
 
 export default defineComponent({

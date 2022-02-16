@@ -4,7 +4,7 @@
     "module": "esnext",
     "strict": true,
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "dist/types/darpi",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
@@ -17,9 +17,11 @@
     "sourceMap": true,
     "baseUrl": ".",
     "newLine": "lf",
+    "skipLibCheck": true,
     "types": ["node", "vue"],
+    "isolatedModules": false,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
     },
     "plugins": [
       {

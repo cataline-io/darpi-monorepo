@@ -3,19 +3,12 @@
   "npmClient": "npm",
   "command": {
     "publish": {
-      "ignoreChanges": [
-        "*.md"
-      ],
+      "npmClientArgs": ["--ignore-prepublish"],
       "message": "chore(release): publish"
     },
     "bootstrap": {
-      "npmClientArgs": [
-        "--no-package-lock",
-        "--ignore-scripts"
-      ]
+      "npmClientArgs": ["--no-package-lock", "--ignore-scripts"]
     }
   },
-  "packages": [
-    "packages/*"
-  ]
+  "packages": ["packages/*"]
 }

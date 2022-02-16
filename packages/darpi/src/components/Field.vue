@@ -26,7 +26,11 @@
 
 <script lang="ts">
 import { defineComponent, inject, PropType } from 'vue'
-import { FormData, Rule, Option } from '@/models'
+
+import FormData from '@/models/FormData'
+import Rule from '@/models/Rule'
+import Option from '@/models/Option'
+
 import eventBus from '@/utils/eventBus'
 import { validateFieldType, FieldType } from '@/utils/validateFieldType'
 import mask from '@cataline.io/mask'

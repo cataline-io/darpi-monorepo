@@ -38,10 +38,6 @@ const baseConfig = {
           {
             find: '@',
             replacement: `${path.resolve(projectRoot, 'src')}`
-          },
-          {
-            find: '@darpi',
-            replacement: `${path.resolve(projectRoot, 'src')}`
           }
         ]
       })

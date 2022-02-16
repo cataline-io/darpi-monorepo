@@ -7,7 +7,8 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import { validate, Schema } from '@cataline.io/schema'
-import { FormData, FormContext } from '@/models'
+import FormData from '@/models/FormData'
+import FormContext from '@/models/FormContext'
 import eventBus from '@/utils/eventBus'
 
 type Values = Record<string, any>
