@@ -26,7 +26,7 @@ export default defineComponent({
     },
     color: {
       type: String as PropType<Color>,
-      default: 'default',
+      default: 'primary',
       validator: (v: Color) => validateButtonColor(v)
     }
   },
