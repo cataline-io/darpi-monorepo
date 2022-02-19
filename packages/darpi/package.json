@@ -8,6 +8,7 @@
   "module": "dist/darpi.esm.js",
   "unpkg": "dist/darpi.min.js",
   "types": "dist/types/darpi/index.d.ts",
+  "type": "module",
   "files": [
     "dist/*"
   ],
