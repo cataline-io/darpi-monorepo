@@ -64,7 +64,17 @@ export default defineComponent({
   methods: {
     onChange(event: Event) {
       if (this.fieldProps.mask) {
-        this.formData.fields[this.fieldProps.name] = mask.handler(event)
+        // the value returned from handler
+        // cannot be directly signed to fields[name] property
+        // like: this.formData.fields[this.fieldProps.name] = mask.handler(event)
+        // because the on-screen change occurs
+        // before the value is modified in the fields object
+
+        // so first event value must be modified natively
+        event.target.value = mask.handler(event)
+
+        // and then sent to the reactive properties of the form data
+        this.formData.fields[this.fieldProps.name] = event.target.value
         return
       }
 

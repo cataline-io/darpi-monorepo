@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { Form, Field, Button, schema } from '@/entry.esm'
-import { FormContext } from '@/models'
+import FormContext from '@/models/FormContext'
 
 const fields = schema.typed({
   drink: schema.string().required().oneOf(['coffee', 'tea', 'coke'])

@@ -20,6 +20,7 @@ const handler = (event: Event) => {
     return event.target.value
   }
 
+  console.log(state.input.value)
   if (state.input.value.length > state.mask.pattern.length) {
     return preventTyping(event)
   }

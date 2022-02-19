@@ -1,6 +1,13 @@
 <template>
   <Form :schema="fields" @submit="send">
-     <Field
+    <Field
+      name="cpf"
+      label="CPF"
+      mask="999.999.999-99"
+      placeholder="999.999.999-99"
+    />
+
+    <Field
       label="Vip Client"
       name="isVip"
       type="switch"
@@ -8,7 +15,7 @@
       text="You are vip???"
     />
 
-    <Field name="email" label="Email" value="yung@cataline.io"  />
+    <Field name="email" label="Email" value="yung@cataline.io" />
 
     <Field label="Password" name="password" type="password" />
 
@@ -32,9 +39,9 @@
       type="radio"
       :options="[
         { text: 'Normal', value: 'normal' },
-        { text: 'Fast', value: 'fast'}
+        { text: 'Fast', value: 'fast' }
       ]"
-    /> 
+    />
 
     <Field
       label="City"
@@ -48,7 +55,7 @@
       ]"
     />
 
-     <Field label="Terms" name="terms" type="checkbox" text="I'am agree"  />
+    <Field label="Terms" name="terms" type="checkbox" text="I'am agree" />
 
     <div class="buttons">
       <Button text="default" color="default" />
@@ -63,9 +70,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { Form, Field, Button, schema } from '@/entry.esm'
-import { FormContext } from '@/models'
+import FormContext from '@/models/FormContext'
 
 const fields = schema.typed({
+  cpf: schema.string().required().minLength(11),
   isVip: schema.boolean().required(),
   email: schema.string().required().email(),
   password: schema.string().required().minLength(4),
