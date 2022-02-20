@@ -8,7 +8,6 @@
   "module": "dist/darpi.esm.js",
   "unpkg": "dist/darpi.min.js",
   "types": "dist/types/darpi/index.d.ts",
-  "type": "module",
   "files": [
     "dist/*"
   ],
@@ -65,7 +64,7 @@
   "engines": {
     "node": ">=12"
   },
-  "gitHead": "df4345e4c1888f1dca1b39e019744097a8303024",
+  "gitHead": "4adad11c06ba2ee0d6e486f0eb96e1bedebb1a17",
   "license": "MIT",
   "keywords": [
     "vue",
