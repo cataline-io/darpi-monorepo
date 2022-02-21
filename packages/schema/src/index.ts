@@ -1,5 +1,6 @@
-export { default as schema } from '@/rules/schema'
-export { default as validate } from '@/functions/validate'
-export { default as configure } from '@/configure'
+import schema from '@/rules/schema'
+import validate from '@/functions/validate'
+import configure from '@/configure'
 
+export { schema, validate, configure }
 export type { Error, Schema } from '@/models'

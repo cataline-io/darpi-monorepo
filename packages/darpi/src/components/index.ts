@@ -4,4 +4,4 @@ export { default as Field } from './Field.vue'
 export { default as Button } from './Button.vue'
 
 // scripts
-export { default as schema, configure } from '@cataline.io/schema'
+export { schema, configure } from '@cataline.io/schema'
