@@ -1,6 +1,6 @@
 {
   "name": "@cataline.io/schema",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
